@@ -46,7 +46,7 @@ config = {
     'test_suite': 'nose.collector',
     'packages': find_packages(),
     'include_package_data': True,
-    'scripts': ['bin/biomaj-daemon-cli.py'],
+    'scripts': ['bin/biomaj-cli.py'],
     'name': 'biomaj_cli'
 }
 

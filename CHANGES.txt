@@ -1,2 +1,4 @@
+3.1.1:
+  Rename biomaj-daemon-cli to biomaj-cli
 3.1.0:
   Create client for biomaj with micro services
