@@ -1,14 +1,14 @@
 # About
 
-Package to use BioMAJ providing biomaj-daemon-cli
+Package to use BioMAJ providing biomaj-cli
 
 # Example
 
-    biomaj-daemon-cli.py --proxy http://biomaj-public-proxy --api-key XYZ_MYAPIKEY --update --bank Anopheles_gambiae
+    biomaj-cli.py --proxy http://biomaj-public-proxy --api-key XYZ_MYAPIKEY --update --bank Anopheles_gambiae
 
 To get help usage:
 
-    biomaj-daemon-cli -h
+    biomaj-cli -h
 
  If proxy is not specifed, a monolitic and local BioMAJ installation is expected
 
