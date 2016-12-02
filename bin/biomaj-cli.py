@@ -23,7 +23,7 @@ def main():
 
     if options.help:
         print('''
-    --config: global.properties file path
+    --config: global.properties file path (local install only)
 
     --proxy: BioMAJ daemon url (http://x.y.z)
 
