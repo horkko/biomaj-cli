@@ -3,11 +3,12 @@ import os
 import sys
 import argparse
 import logging
-
+import getpass
 import requests
 
 from biomaj_cli.utils import Utils
 from biomaj_cli.utils import Options
+from biomaj_core.config import BiomajConfig
 
 
 def main():
@@ -39,10 +40,12 @@ def main():
     --update-status: get status of an update
         [MANDATORY]
         --bank xx: name of the bank to check
+        --proxy http://x.y.z
 
     --update-cancel: cancel current update
         [MANDATORY]
         --bank xx: name of the bank to cancel
+        --proxy http://x.y.z
 
     --status: list of banks with published release
         [OPTIONAL]
@@ -150,13 +153,14 @@ def main():
 
     if not proxy:
         try:
-            from biomaj_daemon.daemon.biomaj_daemon_web import biomaj_client_action
+            from biomaj_daemon.daemon.utils import biomaj_client_action
         except Exception as e:
             print('Failed to import biomaj libraries. Either you forgot the --proxy option, either you use a local biomaj install and did not installed it (biomaj-daemon package)')
 
     try:
         if not proxy:
-            options.user = os.environ['LOGNAME']
+            options.user = getpass.getuser()
+            BiomajConfig.load_config(options.config)
             (status, msg) = biomaj_client_action(options)
         else:
             headers = {}
