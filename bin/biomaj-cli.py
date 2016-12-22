@@ -159,6 +159,7 @@ def main():
 
     try:
         if not proxy:
+            from biomaj_daemon.daemon.utils import biomaj_client_action
             options.user = getpass.getuser()
             BiomajConfig.load_config(options.config)
             (status, msg) = biomaj_client_action(options)
