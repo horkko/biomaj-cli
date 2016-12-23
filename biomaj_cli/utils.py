@@ -28,6 +28,7 @@ class Utils(object):
     @staticmethod
     def set_args(parser):
         parser.add_argument('--about-me', dest="aboutme", action="store_true", help="Get my user info")
+        parser.add_argument('--whatsup', dest="whatsup", action="store_true", default=False, help="Get biomaj info on what daemons are doing (with --proxy only)")
         parser.add_argument('--user-login', dest="userlogin", help="Credentials login")
         parser.add_argument('--user-password', dest="userpassword", help="Credentials password")
         parser.add_argument('--proxy', dest="proxy", help="Biomaj daemon URL")  # http://127.0.0.1
