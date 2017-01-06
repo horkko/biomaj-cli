@@ -37,7 +37,7 @@ class Utils(object):
         parser.add_argument('--update-cancel', dest="updatecancel", action="store_true", default=False, help="Cancel current bank update")
         parser.add_argument('--trace', dest="trace", action="store_true", help="Trace operation in zipkin")
 
-        parser.add_argument('-c', '--config', dest="config", help="Configuration file", default="global.properties")
+        parser.add_argument('-c', '--config', dest="config", help="Configuration file")
         parser.add_argument('--check', dest="check", help="Check bank property file", action="store_true", default=False)
         parser.add_argument('-u', '--update', dest="update", help="Update action", action="store_true", default=False)
         parser.add_argument('--fromscratch', dest="fromscratch", help="Force a new cycle update", action="store_true", default=False)
