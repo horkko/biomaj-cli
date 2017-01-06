@@ -32,8 +32,6 @@ def main():
     --api-key: User API key to authenticate against proxy
 
     --whatsup: Get info on what biomaj is doing
-        [MANDATORY]
-        --proxy http://x.y.z
 
     --about-me: Get my info
         [MANDATORY]
@@ -95,6 +93,7 @@ def main():
         [MANDATORY]
         --bank xx: name of the bank to update
         --release xx: release of the bank to publish
+
     --unpublish: Unpublish bank (remove current)
         [MANDATORY]
         --bank xx: name of the bank to update
