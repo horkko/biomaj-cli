@@ -1,5 +1,5 @@
 3.1.6:
-add options --last-log and --tail to get last log of a bank, needs biomaj-daemon >= 3.0.8
+  Add options --last-log and --tail to get last log of a bank, needs biomaj-daemon >= 3.0.8
 3.1.5:
   Add missing biomaj-core req
 3.1.4:
