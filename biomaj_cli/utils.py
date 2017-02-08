@@ -27,6 +27,8 @@ class Utils(object):
 
     @staticmethod
     def set_args(parser):
+        parser.add_argument('--last-log', dest="lastlog", action="store_true", default=False, help="Get last logs for bank")
+        parser.add_argument('--tail', dest="tail", help="number of lines to tail")
         parser.add_argument('--about-me', dest="aboutme", action="store_true", help="Get my user info")
         parser.add_argument('--whatsup', dest="whatsup", action="store_true", default=False, help="Get biomaj info on what biomaj is doing")
         parser.add_argument('--user-login', dest="userlogin", help="Credentials login")

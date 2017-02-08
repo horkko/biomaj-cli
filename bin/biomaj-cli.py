@@ -33,6 +33,12 @@ def main():
 
     --whatsup: Get info on what biomaj is doing
 
+    --last-log: Get log file of last session
+        [MANDATORY]
+        --proxy http://x.y.z
+        [OPTIONAL]
+        --tail X number of lines to tail from log file
+
     --about-me: Get my info
         [MANDATORY]
         --proxy http://x.y.z
@@ -170,6 +176,19 @@ def main():
             headers = {}
             if options.apikey:
                 headers = {'Authorization': 'APIKEY ' + options.apikey}
+
+            if options.lastlog:
+                if not options.bank:
+                    print("--bank is missing\n")
+                    sys.exit(1)
+                if options.tail:
+                    r = requests.get(proxy + '/api/daemon/bank/' + options.bank + '/log/' + options.tail, headers=headers)
+                    print(r.text)
+                else:
+                    r = requests.get(proxy + '/api/daemon/bank/' + options.bank + '/log', headers=headers)
+                    print(r.text)
+                sys.exit(0)
+
             r = requests.post(proxy + '/api/daemon', headers=headers, json={'options': options.__dict__})
             if not r.status_code == 200:
                 print('Failed to contact BioMAJ daemon')
