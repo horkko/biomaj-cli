@@ -63,6 +63,8 @@ def main():
 
     --log DEBUG|INFO|WARN|ERR  [OPTIONAL]: set log level in logs for this run, default is set in global.properties file
 
+    --force-local: Force monolithic mechanism when micro services are configured
+
     --check: Check bank property file
         [MANDATORY]
         --bank xx: name of the bank to check (will check xx.properties)
@@ -159,12 +161,12 @@ def main():
         apikey = os.environ['BIOMAJ_APIKEY']
         options.apikey = apikey
 
-
     if not proxy:
         try:
             from biomaj_daemon.daemon.utils import biomaj_client_action
         except Exception as e:
-            print('Failed to import biomaj libraries. Either you forgot the --proxy option, either you use a local biomaj install and did not installed it (biomaj-daemon package)')
+            print('Failed to import biomaj libraries. Either you forgot the --proxy option, either you use a local '
+                  'biomaj install and did not installed it (biomaj-daemon package)')
 
     try:
         if not proxy:
