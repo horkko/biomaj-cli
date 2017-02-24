@@ -51,8 +51,8 @@ class Utils(object):
         parser.add_argument('--from-task', dest="from_task", help="Start cycle at a specific task (init always executed)")
         parser.add_argument('--process', dest="process", help="Linked to from-task, optionally specify a block, meta or process name to start from")
         parser.add_argument('-l', '--log', dest="log", help="log level")
-        parser.add_argument('-L', '--force-local', dest="force_local", help="Force monolithic mechanism when micro "
-                                                                            "services are configured", default=False)
+        parser.add_argument('-L', '--force-local', dest="force_local", action="store_true",
+                            help="Force monolithic mechanism when micro services are configured", default=False)
         parser.add_argument('-r', '--remove', dest="remove", help="Remove a bank release", action="store_true", default=False)
         parser.add_argument('--remove-all', dest="removeall", help="Remove all bank releases and database records", action="store_true", default=False)
         parser.add_argument('--remove-pending', dest="removepending", help="Remove pending release", action="store_true", default=False)
